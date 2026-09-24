@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>タイピングゲーム</title>
+</head>
+
+<body>
+
+    <h1>タイピングゲーム</h1>
+
+    <!-- 難易度選択 -->
+    <div id="difficulty-area">
+        <h2>難易度を選んでください</h2>
+
+        <button id="easy-button">Easy</button>
+        <button id="normal-button">Normal</button>
+        <button id="hard-button">Hard</button>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="game-area">
+
+        <p id="question-number"></p>
+
+        <p id="question"></p>
+
+        <input type="text" id="answer" placeholder="ここに入力してください">
+
+        <p id="message"></p>
+
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="result-area">
+
+        <p id="result"></p>
+        <p id="evaluation"></p>
+
+    </div>
+
+    <script type="module" src="Main.js"></script>
+
+</body>
+
+</html>
