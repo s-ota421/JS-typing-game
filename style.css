@@ -1,0 +1,157 @@
+
+/* 全体 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #1e1e2f;
+    color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 12px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* タイトル */
+h1 {
+    font-size: 30px;
+    color: #8be9fd;
+    margin: 0 0 12px;
+}
+
+/* 各エリア */
+#difficulty-area,
+#game-area,
+#result-area {
+    width: 100%;
+    max-width: 600px;
+    margin: 8px auto;
+    padding: 12px 20px;
+    background: #2b2b40;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 難易度 */
+h2 {
+    font-size: 17px;
+    margin: 0 0 8px;
+}
+
+button {
+    background: #6272a4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 22px;
+    margin: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #8be9fd;
+    color: #1e1e2f;
+    transform: translateY(-2px);
+}
+
+/* 問題番号 */
+#question-number {
+    font-size: 16px;
+    color: #bd93f9;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+/* 出題単語 */
+#question {
+    font-size: 32px;
+    font-weight: bold;
+    color: #50fa7b;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+/* 入力欄 */
+#answer {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+    background: white;
+    border: 2px solid #6272a4;
+    border-radius: 8px;
+    outline: none;
+}
+
+#answer:focus {
+    border-color: #8be9fd;
+    box-shadow: 0 0 6px #8be9fd;
+}
+
+#answer:disabled {
+    background: #ccc;
+}
+
+/* OK・NG */
+#message {
+    font-size: 17px;
+    font-weight: bold;
+    min-height: 20px;
+    margin: 8px 0 2px;
+}
+
+/* 結果 */
+#result {
+    white-space: pre-line;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #ffb86c;
+    margin: 4px 0;
+}
+
+#evaluation {
+    font-size: 17px;
+    color: #f1fa8c;
+    margin: 4px 0;
+}
+
+/* 画面が低い場合 */
+@media (max-height: 700px) {
+    body {
+        padding: 6px 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    #difficulty-area,
+    #game-area,
+    #result-area {
+        margin: 4px auto;
+        padding: 8px 14px;
+    }
+
+    #question {
+        font-size: 26px;
+        margin: 6px 0;
+    }
+
+    button {
+        padding: 7px 16px;
+    }
+}

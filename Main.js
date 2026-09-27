@@ -7,8 +7,7 @@ const question = new Question();
 
 let currentQuestion = 0;
 let currentWord = "";
-let start = 0;
-let end = 0;
+let level = "";
 
 const questionNumber = document.getElementById("question-number");
 const wordDisplay = document.getElementById("question");
@@ -20,29 +19,35 @@ const normalButton = document.getElementById("normal-button");
 const hardButton = document.getElementById("hard-button");
 
 easyButton.addEventListener("click",function(){
-    start = 0;
-    end = 10;
+    level = "Easy";
     startGame();
 });
 normalButton.addEventListener("click",function(){
-    start = 10;
-    end = 20;
+    level = "Normal";
     startGame();
 });
 hardButton.addEventListener("click",function(){
-    start = 20;
-    end = 30;
+    level = "Hard";
     startGame();
 });
 
 function startGame(){
+    game.reset();
+    question.reset();
     currentQuestion = 0;
+    currentWord = "";
+    questionNumber.textContent = "";
+    wordDisplay.textContent = "";
+    message.textContent="";
+    result.textContent = "";
+    input.disabled = false;
+    input.value = "";
     startQuestion();
 }
 
 function startQuestion() {
     currentQuestion++;
-    currentWord = question.getQuestion(start, end);
+    currentWord = question.getQuestion(level);
 
     questionNumber.textContent = `第${currentQuestion}問`;
     wordDisplay.textContent = currentWord;
@@ -65,10 +70,9 @@ input.addEventListener("keydown",function(event) {
 
     if(currentQuestion === 10){
         result.textContent = 
-               `ゲーム終了！\n10問中${game.getScore()}問正解！\n${game.showResult()}`;
+               `ゲーム終了！\n10問中${game.getScore()}問正解！\nランクは${game.getRank()}です！\n最大コンボ:${game.getMaxCombo()}`;
         input.disabled = true;
         return;
      }
      startQuestion();
 })
-
